@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventure Holidays — Miles of Memories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        /* Premium Dark Palette - Updated to #020022 base */
+        --bg-deep: #020022;
+        --bg-navy: #060033;
+        --bg-card: #0C0044;
+        --text-primary: #FFFFFF;
+        --text-secondary: #94A3B8;
+        --accent: #FECC00;
+        
+        /* Typography System */
+        --font-display: 'Poppins', sans-serif;
+        --font-text: 'Poppins', sans-serif;
+        --font-premium: 'Gloock', serif;
+        --font-montserrat: 'Montserrat', sans-serif;
+      }
+
+      body {
+        font-family: var(--font-text);
+        font-size: 17px;
+        line-height: 1.6;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        background-color: var(--bg-deep);
+        color: var(--text-primary);
+        margin: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        perspective: 1000px;
+      }
+
+      h1, h2, h3, .font-display {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+        font-weight: 600;
+      }
+
+      .font-serif {
+        font-family: var(--font-premium);
+      }
+
+      .font-montserrat {
+        font-family: var(--font-montserrat);
+      }
+
+      /* Premium Dark Glassmorphism - Heavy Hover Version */
+      .glass-card {
+        background: rgba(12, 0, 68, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(254, 204, 0, 0.1);
+        transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .glass-card:hover {
+        border-color: rgba(254, 204, 0, 0.8);
+        background: rgba(12, 0, 68, 0.6);
+        box-shadow: 0 25px 50px -12px rgba(6, 0, 51, 0.8), 0 0 40px rgba(254, 204, 0, 0.2);
+        transform: translateY(-16px) scale(1.03) rotateX(2deg) rotateY(1deg);
+        z-index: 20;
+      }
+
+      /* Animated Glare Line */
+      @keyframes glare-sweep {
+        0% { transform: translateX(-150%) skewX(-45deg); opacity: 0; }
+        20% { opacity: 0.5; }
+        80% { opacity: 0.5; }
+        100% { transform: translateX(150%) skewX(-45deg); opacity: 0; }
+      }
+
+      .glare-line {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(254, 204, 0, 0.25), transparent);
+        animation: glare-sweep 4s infinite linear;
+        pointer-events: none;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin 3s linear infinite;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-deep);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #0C0044;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+
+      @keyframes scroll-down {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(8px); opacity: 0; }
+      }
+      .animate-scroll {
+        animation: scroll-down 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+
+      .text-display-1 { font-size: 80px; line-height: 1.1; font-weight: 700; }
+      .text-display-2 { font-size: 56px; line-height: 1.1; font-weight: 600; }
+      .text-headline { font-size: 32px; line-height: 1.2; font-weight: 600; }
+      .text-body { font-size: 19px; line-height: 1.6; font-weight: 400; }
+      
+      @media (max-width: 768px) {
+        .text-display-1 { font-size: 44px; }
+        .text-display-2 { font-size: 36px; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
