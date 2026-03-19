@@ -7,7 +7,7 @@ import BackgroundParticles from './components/BackgroundParticles';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#020022] selection:bg-[#FECC00]/30 selection:text-white font-sans text-white">
+    <div className="bg-[#020022] selection:bg-[#FECC00]/30 selection:text-white font-sans text-white">
       {/* Dynamic Background Particles */}
       <BackgroundParticles />
       
