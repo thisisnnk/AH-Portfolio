@@ -49,7 +49,7 @@ const BackgroundParticles: React.FC = () => {
       draw() {
         if (!ctx) return;
         // Darker yellow for light theme visibility
-        ctx.fillStyle = `rgba(254, 204, 0, ${this.opacity})`;
+        ctx.fillStyle = `rgba(254, 204, 0, ${this.opacity * 0.4})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();

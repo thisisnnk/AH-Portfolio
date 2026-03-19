@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(npm list:*)",
+      "Bash(node -e \":*)"
     ]
   }
 }

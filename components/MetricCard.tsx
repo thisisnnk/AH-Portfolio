@@ -19,7 +19,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ metric, index = 0, visible = fa
   return (
     <div 
       style={{ transitionDelay: visible ? staggerDelay : '0ms' }}
-      className={`glass-card rounded-[24px] p-8 group relative overflow-hidden h-full transform transition-all duration-700 ease-out ${
+      className={`glass-card rounded-[24px] p-8 group relative overflow-hidden h-full transform transition-all duration-700 ease-out bg-white ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
       }`}
     >
@@ -35,7 +35,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ metric, index = 0, visible = fa
       <div className="absolute -top-20 -left-20 w-48 h-48 bg-[#001275]/40 blur-[80px] opacity-0 group-hover:opacity-100 transition-all duration-1000"></div>
 
       <div className="flex justify-between items-start mb-10 relative z-10">
-        <div className="w-14 h-14 rounded-2xl bg-[#FECC00]/10 flex items-center justify-center border border-[#FECC00]/20 group-hover:bg-[#FECC00]/30 group-hover:border-[#FECC00]/50 group-hover:scale-125 group-hover:rotate-[360deg] transition-all duration-700 shadow-xl">
+        <div className="w-14 h-14 rounded-2xl bg-[#FECC00]/10 flex items-center justify-center border border-[#FECC00]/20 group-hover:bg-[#FECC00]/30 group-hover:border-[#FECC00]/60 group-hover:scale-125 group-hover:rotate-[360deg] transition-all duration-700 shadow-sm">
           {IconComponent ? (
             <IconComponent className="text-[#FECC00] group-hover:drop-shadow-[0_0_12px_#FECC00]" size={24} />
           ) : (
@@ -49,10 +49,10 @@ const MetricCard: React.FC<MetricCardProps> = ({ metric, index = 0, visible = fa
           end={metric.value}
           suffix={metric.suffix}
           prefix={metric.prefix}
-          className="text-[54px] font-bold tracking-tighter text-white block leading-none font-display mb-4 group-hover:text-[#FECC00] transition-colors duration-500 drop-shadow-[0_0_15px_rgba(254,204,0,0.3)] group-hover:drop-shadow-[0_0_20px_rgba(254,204,0,0.6)]"
+          className="text-[54px] font-bold tracking-tighter text-gray-900 block leading-none font-display mb-4 group-hover:text-[#FECC00] transition-colors duration-500"
         />
-        <h4 className="text-white font-bold text-[20px] tracking-tight font-display mb-2 group-hover:translate-x-2 transition-transform duration-500">{metric.label}</h4>
-        <p className="text-slate-400 text-[16px] font-normal leading-relaxed group-hover:text-white transition-colors duration-500">
+        <h4 className="text-gray-900 font-bold text-[20px] tracking-tight font-display mb-2 group-hover:translate-x-2 transition-transform duration-500">{metric.label}</h4>
+        <p className="text-gray-500 text-[16px] font-normal leading-relaxed group-hover:text-gray-700 transition-colors duration-500">
           {metric.description}
         </p>
       </div>

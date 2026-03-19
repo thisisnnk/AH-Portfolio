@@ -70,18 +70,18 @@ const AchievementSection: React.FC = () => {
             <div className="glare-line opacity-20"></div>
             
             <div className="text-center group-summary cursor-default group/item1 transition-all duration-700 hover:scale-110">
-              <div className="text-[72px] font-bold text-[#FECC00] tracking-tighter mb-2 font-display drop-shadow-[0_0_15px_rgba(254,204,0,0.3)] group-hover/item1:drop-shadow-[0_0_30px_rgba(254,204,0,0.8)] transition-all duration-700">100%</div>
-              <div className="text-slate-400 text-[14px] font-bold uppercase tracking-[0.25em] font-display group-hover/item1:text-white transition-colors duration-500">On-Time Departures</div>
+              <div className="text-[72px] font-bold text-[#FECC00] tracking-tighter mb-2 font-display transition-all duration-700">100%</div>
+              <div className="text-gray-500 text-[14px] font-bold uppercase tracking-[0.25em] font-montserrat group-hover/item1:text-gray-900 transition-colors duration-500">On-Time Departures</div>
             </div>
             
             <div className="text-center group-summary border-y md:border-y-0 md:border-x border-white/5 py-12 md:py-0 cursor-default group/item2 transition-all duration-700 hover:scale-110">
-              <div className="text-[72px] font-bold text-white tracking-tighter mb-2 font-display drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover/item2:text-[#FECC00] group-hover/item2:drop-shadow-[0_0_30px_rgba(254,204,0,0.8)] transition-all duration-700">24/7</div>
-              <div className="text-slate-400 text-[14px] font-bold uppercase tracking-[0.25em] font-display group-hover/item2:text-white transition-colors duration-500">Expert Support</div>
+              <div className="text-[72px] font-bold text-gray-900 tracking-tighter mb-2 font-display group-hover/item2:text-[#FECC00] transition-all duration-700">24/7</div>
+              <div className="text-gray-500 text-[14px] font-bold uppercase tracking-[0.25em] font-montserrat group-hover/item2:text-gray-900 transition-colors duration-500">Expert Support</div>
             </div>
             
             <div className="text-center group-summary cursor-default group/item3 transition-all duration-700 hover:scale-110">
-              <div className="text-[72px] font-bold text-white tracking-tighter mb-2 font-display drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover/item3:text-[#FECC00] group-hover/item3:drop-shadow-[0_0_30px_rgba(254,204,0,0.8)] transition-all duration-700">&lt; 2%</div>
-              <div className="text-slate-400 text-[14px] font-bold uppercase tracking-[0.25em] font-display group-hover/item3:text-white transition-colors duration-500">Cancellation Rate</div>
+              <div className="text-[72px] font-bold text-gray-900 tracking-tighter mb-2 font-display group-hover/item3:text-[#FECC00] transition-all duration-700">&lt; 2%</div>
+              <div className="text-gray-500 text-[14px] font-bold uppercase tracking-[0.25em] font-montserrat group-hover/item3:text-gray-900 transition-colors duration-500">Cancellation Rate</div>
             </div>
         </div>
       </div>
@@ -111,10 +111,10 @@ const GroupRow: React.FC<{ group: EnhancedMetricGroup, index: number }> = ({ gro
           <div className="p-2.5 rounded-xl bg-white/5 border border-[#FECC00]/20 shadow-[0_0_20px_rgba(254,204,0,0.1)]">
             {group.icon}
           </div>
-          <span className="text-[#FECC00] text-[13px] font-bold tracking-[0.2em] uppercase font-display">Impact</span>
+          <span className="text-[#FECC00] text-[13px] font-bold tracking-[0.2em] uppercase font-montserrat">Impact</span>
         </div>
-        <h3 className="text-headline text-white mb-6 font-display">{group.title}</h3>
-        <p className="text-slate-400 text-body font-medium leading-relaxed">
+        <h3 className="text-headline text-gray-900 mb-6 font-display">{group.title}</h3>
+        <p className="text-gray-500 text-body font-medium leading-relaxed">
           {group.subtitle}
         </p>
       </div>
