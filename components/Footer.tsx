@@ -4,7 +4,6 @@ import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 const Footer: React.FC = () => {
   const footerContentRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -15,9 +14,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="relative bg-white pt-16 pb-0 px-6 border-t border-gray-200 overflow-hidden">
-      {/* Top accent line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FECC00]/60 to-transparent"></div>
+    <footer className="relative bg-transparent pt-16 pb-0 px-6">
 
       <div
         ref={footerContentRef}
@@ -61,26 +58,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-6 pb-6 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-8">
-            {!logoError ? (
-              <img
-                src="/ah-logo.png"
-                alt="Adventure Holidays"
-                onError={() => setLogoError(true)}
-                className="h-12 w-auto opacity-90 hover:opacity-100 transition-all cursor-pointer hover:scale-110 active:scale-95 duration-500"
-              />
-            ) : (
-              <div className="flex items-center gap-2 font-montserrat cursor-pointer">
-                <span className="text-gray-900 text-lg font-black uppercase tracking-tight">Adventure</span>
-                <span className="text-[#FECC00] text-lg font-black uppercase tracking-tight">Holidays</span>
-              </div>
-            )}
-          </div>
-          <p className="text-gray-400 text-[11px] font-bold tracking-[0.3em] uppercase font-montserrat">
-            © {new Date().getFullYear()} Adventure Holidays | All Rights Reserved
-          </p>
-        </div>
       </div>
     </footer>
   );

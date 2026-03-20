@@ -11,16 +11,8 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative h-[85vh] md:h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-white">
-      {/* Subtle Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070"
-          alt="Adventure Landscape"
-          className={`w-full h-full object-cover transition-transform duration-[20000ms] ease-out ${isLoaded ? 'scale-110' : 'scale-100'} opacity-[0.07]`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
-      </div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 bg-transparent">
+
 
       <div className={`relative z-10 transition-all duration-[1200ms] cubic-bezier(0.4, 0, 0.2, 1) transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
 
@@ -68,12 +60,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 group">
-        <div className="w-[1px] h-12 bg-gradient-to-b from-[#FECC00]/60 via-[#FECC00]/20 to-transparent flex justify-center">
-          <div className="w-[1.5px] h-4 bg-[#FECC00] animate-scroll"></div>
-        </div>
-      </div>
     </section>
   );
 };

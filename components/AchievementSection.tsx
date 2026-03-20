@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Bus, Users, Clock, Navigation, GraduationCap, Briefcase, Compass, Heart, RotateCcw, Star, History, Users2, FileText } from 'lucide-react';
 import MetricCard from './MetricCard';
 
+
 interface EnhancedMetricData {
   value: number;
   suffix?: string;
@@ -59,13 +60,15 @@ const ACHIEVEMENT_GROUPS: EnhancedMetricGroup[] = [
 
 const AchievementSection: React.FC = () => {
   return (
-    <section className="py-24 md:py-48 px-6 bg-transparent">
-      <div className="max-w-6xl mx-auto space-y-32 md:space-y-64">
+    <section className="py-24 md:py-48 px-6 bg-transparent relative">
+
+      <div className="max-w-6xl mx-auto space-y-32 md:space-y-64 relative z-10">
         {ACHIEVEMENT_GROUPS.map((group, idx) => (
           <GroupRow key={idx} group={group} index={idx} />
         ))}
         
         {/* Cinematic Summary Bar */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-8 py-24 glass-card rounded-[2.5rem] items-center relative overflow-hidden group">
             <div className="glare-line opacity-20"></div>
             
@@ -89,7 +92,7 @@ const AchievementSection: React.FC = () => {
   );
 };
 
-const GroupRow: React.FC<{ group: EnhancedMetricGroup, index: number }> = ({ group, index }) => {
+const GroupRow: React.FC<{ group: EnhancedMetricGroup, index: number }> = ({ group }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -102,7 +105,7 @@ const GroupRow: React.FC<{ group: EnhancedMetricGroup, index: number }> = ({ gro
   }, []);
 
   return (
-    <div 
+    <div
       ref={rowRef}
       className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
     >

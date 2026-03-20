@@ -36,14 +36,16 @@ const MarqueeRow: React.FC<{ logos: typeof LOGOS; reverse?: boolean; speed?: num
         style={{
           animation: `${reverse ? 'marquee-reverse' : 'marquee'} ${speed}s linear infinite`,
           width: 'max-content',
+          willChange: 'transform',
         }}
       >
         {duplicated.map((logo, i) => (
-          <div key={i} className="flex-shrink-0 h-24 w-56 flex items-center justify-center">
+          <div key={i} className="flex-shrink-0 h-28 w-60 flex items-center justify-center">
             <img
               src={logo.src}
               alt={logo.alt}
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
+              style={{ opacity: 1, filter: 'none' }}
             />
           </div>
         ))}
@@ -54,9 +56,10 @@ const MarqueeRow: React.FC<{ logos: typeof LOGOS; reverse?: boolean; speed?: num
 
 const ClientsSection: React.FC = () => {
   return (
-    <section className="py-16 bg-white border-y border-gray-100 overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center bg-transparent relative py-8 pt-64">
+
       {/* Heading */}
-      <div className="text-center mb-12 px-6">
+      <div className="text-center mb-8 px-6">
         <p className="text-gray-400 text-[12px] font-bold uppercase tracking-[0.3em] font-montserrat mb-3">Trusted By</p>
         <h2 className="text-gray-900 font-display font-normal text-[30px] tracking-tight">
           where our{' '}
@@ -65,10 +68,8 @@ const ClientsSection: React.FC = () => {
         </h2>
       </div>
 
-      {/* Fade edges — cover all 3 rows */}
+      {/* Marquee rows */}
       <div className="relative">
-        <div className="absolute left-0 top-0 h-full w-48 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-48 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none" />
 
         <MarqueeRow logos={ROW1} reverse={false} speed={30} />
         <MarqueeRow logos={ROW2} reverse={true}  speed={35} />
